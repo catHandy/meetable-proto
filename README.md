@@ -8,7 +8,7 @@
 3. **추천** — 확정된 날짜·장소를 기준으로 동네 추천 (준비중).
 
 ## 실행
-정적 파일이라 별도 빌드가 없습니다. 로컬에서는 아무 정적 서버로 `index.html`을 열면 됩니다.
+정적 파일이라 별도 빌드가 없습니다. 로컬에서는 아무 정적 서버로 `index.html`을 열면 되며, 첫 화면은 소개 랜딩입니다.
 
 ```bash
 python3 -m http.server
@@ -18,8 +18,10 @@ python3 -m http.server
 GitHub Pages: 저장소 Settings → Pages → 브랜치 루트(`/`)로 배포하면 `index.html`이 진입점이 됩니다.
 
 ## 구성
-- `index.html` — 진입점
-- `proto.css` — 디자인 시스템
+- `index.html` — 소개 랜딩 페이지(진입점)
+- `app.html` — 프로토타입 (랜딩의 CTA로 진입)
+- `landing.css` / `icon.svg` — 랜딩 스타일·아이콘
+- `proto.css` — 프로토타입 디자인 시스템
 - `proto-data.jsx` — 공유 데모 데이터
 - `proto-date.jsx` / `proto-place.jsx` / `proto-app.jsx` — 화면 컴포넌트
 

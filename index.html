@@ -2,19 +2,245 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>meetAble — 프로토타입</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>meetAble — 친구들 약속, 날짜부터 장소까지 한 번에</title>
+<meta name="description" content="되는 날을 칠하면 겹치는 날이 뜨고, 모두에게 공정한 만남 장소까지 추천하는 약속 조율 앱." />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
-<link rel="stylesheet" href="proto.css" />
+<link rel="stylesheet" href="landing.css" />
 </head>
 <body>
-<div id="root"></div>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="proto-data.jsx"></script>
-<script type="text/babel" src="proto-date.jsx"></script>
-<script type="text/babel" src="proto-place.jsx"></script>
-<script type="text/babel" src="proto-app.jsx"></script>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brandrow" href="#top"><img class="mark" src="icon.svg" alt="" /><b>meetAble</b></a>
+    <a class="navcta" href="app.html">프로토타입 체험하기 →</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <img class="appicon" src="icon.svg" alt="meetAble 아이콘" />
+    <h1>약속, 겹치는 날을<br />찾는 것부터.</h1>
+    <p class="lead">되는 날을 칠하면 다 같이 되는 날이 뜨고,<br />그 자리에서 만날 곳까지 정해져요.</p>
+    <div class="metarow">
+      <span class="chip"><span class="dot" style="background:var(--pri)"></span>약속 조율</span>
+      <span class="chip"><span class="dot" style="background:var(--p2)"></span>날짜 + 장소</span>
+      <span class="chip"><span class="dot" style="background:var(--plum)"></span>무료 · 설치 없음</span>
+    </div>
+    <div class="herocta">
+      <a class="btn primary" href="app.html">프로토타입 체험하기 →</a>
+      <a class="btn ghost" href="#how">어떻게 작동하나요</a>
+    </div>
+    <p class="note">브라우저에서 바로 실행 · 데모용 예시 데이터</p>
+  </div>
+</header>
+
+<!-- ── store-style screenshot carousel ── -->
+<section class="shots">
+  <div class="shotrail">
+
+    <!-- SHOT 1 · 날짜 -->
+    <div class="shot">
+      <div class="cap">
+        <span class="k">날짜</span>
+        <h3>되는 날을 칠하면<br />겹치는 날이 진해져요</h3>
+      </div>
+      <div class="mock">
+        <div class="m-mesh"></div>
+        <div class="m-in">
+          <div class="m-status"><span>9:41</span><span class="ic"><i></i><i></i><i></i></span></div>
+          <div class="m-top">
+            <b>졸업 여행</b>
+            <div class="avs m-avs">
+              <div class="av" style="background:var(--p1)">민</div>
+              <div class="av" style="background:var(--p2)">준</div>
+              <div class="av" style="background:var(--p3)">나</div>
+            </div>
+          </div>
+          <div class="m-seg"><span class="on">날짜</span><span>장소</span><span>추천</span></div>
+          <div class="m-title">6월, 다 같이 되는 날은?</div>
+          <div class="m-sub">되는 날을 드래그해서 칠해 보세요</div>
+          <div class="m-card">
+            <div class="m-hm" id="mini-hm">
+              <div class="wd">월</div><div class="wd">화</div><div class="wd">수</div><div class="wd">목</div><div class="wd">금</div><div class="wd">토</div><div class="wd sun">일</div>
+            </div>
+            <div class="m-legend">
+              <span>적음</span>
+              <i style="background:var(--r1)"></i><i style="background:var(--r2)"></i><i style="background:var(--r3)"></i>
+              <span>전원 가능</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 2 · 장소 -->
+    <div class="shot">
+      <div class="cap">
+        <span class="k">장소</span>
+        <h3>모두에게 공정한<br />만남 장소를 추천</h3>
+      </div>
+      <div class="mock">
+        <div class="m-mesh"></div>
+        <div class="m-in">
+          <div class="m-status"><span>9:41</span><span class="ic"><i></i><i></i><i></i></span></div>
+          <div class="m-top">
+            <b>졸업 여행</b>
+            <div class="avs m-avs">
+              <div class="av" style="background:var(--p1)">민</div>
+              <div class="av" style="background:var(--p2)">준</div>
+              <div class="av" style="background:var(--p3)">나</div>
+            </div>
+          </div>
+          <div class="m-seg"><span>날짜</span><span class="on">장소</span><span>추천</span></div>
+          <div class="m-title">공정하게 만날 곳</div>
+          <div class="m-sub">각자 이동시간을 맞춰 정렬했어요</div>
+          <div class="m-pill"><span>공정 추천 ON</span><span class="sw"><i></i></span></div>
+          <div class="m-cand on">
+            <div class="hd"><b>신도림역</b><span class="mx">전원 27분 이내</span></div>
+            <div class="m-bar"><span class="nm">민지</span><span class="track"><i style="width:70%;background:var(--p1)"></i></span><span class="v">24분</span></div>
+            <div class="m-bar"><span class="nm">준호</span><span class="track"><i style="width:80%;background:var(--p2)"></i></span><span class="v">27분</span></div>
+            <div class="m-bar"><span class="nm">나</span><span class="track"><i style="width:60%;background:var(--p3)"></i></span><span class="v">21분</span></div>
+          </div>
+          <div class="m-cand">
+            <div class="hd"><b>사당역</b><span class="mx" style="color:var(--soft)">전원 34분 이내</span></div>
+            <div class="m-bar"><span class="nm">민지</span><span class="track"><i style="width:95%;background:var(--p1)"></i></span><span class="v">34분</span></div>
+            <div class="m-bar"><span class="nm">준호</span><span class="track"><i style="width:55%;background:var(--p2)"></i></span><span class="v">19분</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 3 · 추천/확정 -->
+    <div class="shot">
+      <div class="cap">
+        <span class="k">확정</span>
+        <h3>날짜부터 장소까지<br />한 번에 정리돼요</h3>
+      </div>
+      <div class="mock">
+        <div class="m-mesh"></div>
+        <div class="m-in">
+          <div class="m-status"><span>9:41</span><span class="ic"><i></i><i></i><i></i></span></div>
+          <div class="m-top">
+            <b>졸업 여행</b>
+            <div class="avs m-avs">
+              <div class="av" style="background:var(--p1)">민</div>
+              <div class="av" style="background:var(--p2)">준</div>
+              <div class="av" style="background:var(--p3)">나</div>
+            </div>
+          </div>
+          <div class="m-seg"><span>날짜</span><span>장소</span><span class="on">추천</span></div>
+          <div class="m-confirm">
+            <div class="lbl">약속 확정</div>
+            <div class="big">6/14(토) · 신도림역</div>
+            <div class="meta">전원 27분 이내로 도착</div>
+          </div>
+          <div class="m-title" style="font-size:15px;margin-bottom:8px">이 동네 갈 만한 곳</div>
+          <div class="m-rec"><div class="th"></div><div><b>맛집 추천</b><div><span>도보 5분 이내 3곳</span></div></div><span class="rb">준비중</span></div>
+          <div class="m-rec"><div class="th"></div><div><b>카페 추천</b><div><span>조용한 곳 2곳</span></div></div><span class="rb">준비중</span></div>
+          <div class="m-cta">친구에게 공유 ↗</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── feature blocks ── -->
+<section class="pitch">
+  <div class="wrap">
+    <div class="feat">
+      <div class="featcard reveal">
+        <div class="fi" style="background:rgba(240,98,62,.12)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f0623e" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="3"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/><path d="M8.5 14.5l2.2 2.2 4.3-4.6"/></svg>
+        </div>
+        <h3>날짜부터 장소까지,<br />한 번에</h3>
+        <p>되는 날을 칠하면 다 같이 되는 날이 뜨고, 그 자리에서 만날 곳까지 정해요. 캘린더 앱과 지도 앱을 오갈 필요 없이 하나의 흐름으로 끝냅니다.</p>
+        <div class="glow" style="background:radial-gradient(circle, var(--pri), transparent 68%)"></div>
+      </div>
+      <div class="featcard reveal">
+        <div class="fi" style="background:rgba(123,63,160,.12)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7b3fa0" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4.5-4.2 7-7.4 7-11a7 7 0 1 0-14 0c0 3.6 2.5 6.8 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        </div>
+        <h3>모두에게<br />공정한 만남 장소</h3>
+        <p>각자 위치에서의 이동시간을 계산해, 누구 한 명만 유독 멀지 않은 '공정한' 중간 지점을 추천해요. 매번 반복되던 장소 실랑이를 줄여 줍니다.</p>
+        <div class="glow" style="background:radial-gradient(circle, var(--plum), transparent 68%)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── how it works ── -->
+<section class="steps" id="how">
+  <div class="wrap">
+    <div class="eyebrow">HOW IT WORKS</div>
+    <h2>세 단계면 약속 끝.</h2>
+    <div class="steprow">
+      <div class="step reveal">
+        <div class="n">1</div>
+        <h4>날짜</h4>
+        <p>캘린더에 되는 날을 칠하면 전원이 겹치는 날짜가 자동으로 진해집니다.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">2</div>
+        <h4>장소</h4>
+        <p>공정 모드로 모두의 이동시간을 맞춘 역 후보를 가까운 순서대로 추천받아요.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">3</div>
+        <h4>추천</h4>
+        <p>확정된 날짜·장소를 기준으로 그 동네 갈 만한 곳까지 이어서 제안합니다. <em style="color:var(--faint);font-style:normal">(곧 제공)</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── closing CTA ── -->
+<section class="band">
+  <div class="wrap">
+    <h2>지금 바로 써보세요.</h2>
+    <p>설치도 로그인도 없이, 브라우저에서 meetAble 프로토타입을 체험할 수 있어요.</p>
+    <a class="btn primary" href="app.html">프로토타입 체험하기 →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="brandrow"><img class="mark" src="icon.svg" alt="" /><b>meetAble</b></div>
+    <div class="fnote">데모용 프로토타입 · 화면 속 이름·장소·수치는 모두 예시입니다.</div>
+  </div>
+</footer>
+
+<script>
+  // mini heatmap for shot 1 (June 2026, Mon-first, June 1 = Monday)
+  (function () {
+    var host = document.getElementById('mini-hm');
+    if (!host) return;
+    var full = { 13: 1, 14: 1, 20: 1, 21: 1 };        // 전원 가능 (dot)
+    var lvl = { 5:1,12:1,19:1,26:1, 6:2,7:2,27:2,28:2, 13:3,14:3,20:3,21:3 };
+    var ramp = { 1: 'var(--r1)', 2: 'var(--r2)', 3: 'var(--r3)' };
+    var mine = { 6:1,7:1,13:1,14:1,20:1,21:1,27:1,28:1 };
+    for (var d = 1; d <= 30; d++) {
+      var c = document.createElement('div');
+      c.className = 'm-cell' + (mine[d] ? ' mine' : '') + (full[d] ? ' full' : '');
+      if (lvl[d]) c.style.background = ramp[lvl[d]];
+      if (lvl[d] === 3) c.style.color = '#fff';
+      c.textContent = d;
+      host.appendChild(c);
+    }
+  })();
+
+  // reveal on scroll
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.18 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+
 </body>
 </html>
